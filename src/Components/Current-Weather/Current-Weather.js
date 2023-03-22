@@ -9,8 +9,18 @@ const CurrentWeather = ({ data }) => {
           {/* // potentially add dynamic if statement here// */}
           <p className="weather-description"></p>
         </div>
-
-        <img alt="weather" className="weather-icon" src="icons/01d.png" />
+        <div className="clouds">
+          {data.cloudCover.sg <= 25 ? (
+            <img src="icons/01d.png" className="clouds" />
+          ) : data.cloudCover.sg <= 50 ? (
+            <img src="icons/02d.png" className="clouds" />
+          ) : data.cloudCover.sg <= 75 ? (
+            <img src="icons/03d.png" className="clouds" />
+          ) : data.cloudCover.sg <= 100 ? (
+            <img src="icons/04d.png" className="clouds" />
+          ) : null}
+          {/* <img alt="weather" className="weather-icon" src="icons/01d.png" /> */}
+        </div>
       </div>
       <div className="bottom">
         <p className="temperature">{Math.round(data.airTemperature.sg)}°C</p>

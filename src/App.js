@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Search from "./Components/Search";
 import Forecast from "./Components/Forecast/Forecast";
 import CurrentWeather from "./Components/Current-Weather/Current-Weather";
+import CloudCover from "./Components/Cloud-Cover/Cloud-Cover";
 import { AsyncPaginate } from "react-select-async-paginate";
 import "./App.css";
 

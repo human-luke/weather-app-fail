@@ -2,25 +2,36 @@
   background-color: #fbfbfb00;
   color: #fffdfd;
   cursor: pointer;
-  padding: 18px;
+  padding: 0 100px 0 100px;
   width: 100%;
   border: transparent;
   text-align: left;
   outline: none;
   font-size: 25px;
-  transition: 0.4s;
+  transition: 0.4s ease;
 }
 
 .accordion-body.active {
   padding: 0 18px;
   background-color: #575555;
-  display: none;
+  display: none !important;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
 
+.accordion-body {
+  color: white;
+  text-align: center;
+}
+
 .accordion-button {
+  color: rgb(255, 255, 255) !important;
+
   background-color: transparent !important;
+  display: center !important;
+  font-size: 20px !important;
+  margin: auto;
+  word-spacing: 100px !important;
 }
 
 .accordion-button:focus {
@@ -29,6 +40,23 @@
 }
 
 .accordion-item {
-  background-color: #77777700 !important;
+  background-color: #33333339 !important;
   border: 1px solid rgba(0, 0, 0, 0) !important;
+  font-size: 1px !important;
 }
+
+.accordion-item:not(:first-child) {
+  margin: auto;
+}
+
+.clouds {
+  width: 60px !important;
+}
+
+/* .accordion-item:not(:last-child) {
+  margin-bottom: 10px;
+} */
+
+/* .forecastDays {
+  font-size: 20px;
+} */

@@ -3,7 +3,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import { Accordion, Collapse } from "react-bootstrap";
 import { button } from "react-bootstrap";
 import transitions from "bootstrap";
-
+import cloudCover from "../Cloud-Cover/Cloud-Cover";
 import "./Forecast.css";
 
 const WEEK_DAYS = [
@@ -27,7 +27,7 @@ const Forecast = ({ data }) => {
     <div class="accordion" id="accordionExample">
       <label className="title">Forecast</label>
       {"     "}
-      <button type="button" class="btn btn-outline-dark">
+      <button type="button" class="btn btn-outline">
         Convert to Fahreinheit
       </button>
       {/* Forecast 1 */}
@@ -41,7 +41,16 @@ const Forecast = ({ data }) => {
             aria-expanded="false"
             aria-controls="collapseOne"
           >
-            {forecastDays[0]}
+            {forecastDays[0]} {Math.round(data.days[0].airTemperature.sg)}°C{" "}
+            {data.days[0].cloudCover.sg <= 25 ? (
+              <img src="icons/01d.png" className="clouds" />
+            ) : data.days[0].cloudCover.sg <= 50 ? (
+              <img src="icons/02d.png" className="clouds" />
+            ) : data.days[0].cloudCover.sg <= 75 ? (
+              <img src="icons/03d.png" className="clouds" />
+            ) : data.days[0].cloudCover.sg <= 100 ? (
+              <img src="icons/04d.png" className="clouds" />
+            ) : null}
           </button>
         </h2>
 
@@ -49,12 +58,12 @@ const Forecast = ({ data }) => {
           id="collapseOne"
           class="accordion-collapse collapse"
           aria-labelledby="headingOne"
-          // data-bs-parent="#accordionExample"
+          data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
             <p className="city">{data.city}</p>
             <p className="temperature">
-              {Math.round(data.days[0].airTemperature.sg)}°C
+              {/* {Math.round(data.days[0].airTemperature.sg)}°C */}
             </p>
             <p>
               {" "}
@@ -88,6 +97,14 @@ const Forecast = ({ data }) => {
                 {Math.round(data.days[0].pressure.sg)} hPa
               </span>
             </p>
+            <p>
+              {/* <img
+                alt="weather"
+                className="icon-small"
+                src={cloudCoverage(data.days[0].cloudCover.sg)}
+
+              /> */}
+            </p>
           </div>
         </div>
       </div>
@@ -102,14 +119,24 @@ const Forecast = ({ data }) => {
             aria-expanded="false"
             aria-controls="collapseTwo"
           >
-            {forecastDays[1]}
+            {forecastDays[1]} {Math.round(data.days[1].airTemperature.sg)}°C
+            {"  "}
+            {data.days[1].cloudCover.sg <= 25 ? (
+              <img src="icons/01d.png" className="clouds" />
+            ) : data.days[1].cloudCover.sg <= 50 ? (
+              <img src="icons/02d.png" className="clouds" />
+            ) : data.days[1].cloudCover.sg <= 75 ? (
+              <img src="icons/03d.png" className="clouds" />
+            ) : data.days[1].cloudCover.sg <= 100 ? (
+              <img src="icons/04d.png" className="clouds" />
+            ) : null}
           </button>
         </h2>
         <div
           id="collapseTwo"
           class="accordion-collapse collapse "
           aria-labelledby="headingTwo"
-          // data-bs-parent="#accordionExample"
+          data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
             <p className="city">{data.city}</p>
@@ -163,13 +190,23 @@ const Forecast = ({ data }) => {
             aria-controls="collapseThree"
           >
             {forecastDays[2]}
+            {"  "} {Math.round(data.days[2].airTemperature.sg)}°C{" "}
+            {data.days[2].cloudCover.sg <= 25 ? (
+              <img src="icons/01d.png" className="clouds" />
+            ) : data.days[2].cloudCover.sg <= 50 ? (
+              <img src="icons/02d.png" className="clouds" />
+            ) : data.days[2].cloudCover.sg <= 75 ? (
+              <img src="icons/03d.png" className="clouds" />
+            ) : data.days[2].cloudCover.sg <= 100 ? (
+              <img src="icons/04d.png" className="clouds" />
+            ) : null}
           </button>
         </h2>
         <div
           id="collapseThree"
           class="accordion-collapse collapse "
           aria-labelledby="headingThree"
-          // data-bs-parent="#accordionExample"
+          data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
             <p className="city">{data.city}</p>
@@ -223,13 +260,23 @@ const Forecast = ({ data }) => {
             aria-controls="collapseFour"
           >
             {forecastDays[3]}
+            {"  "} {Math.round(data.days[3].airTemperature.sg)}°C{" "}
+            {data.days[3].cloudCover.sg <= 25 ? (
+              <img src="icons/01d.png" className="clouds" />
+            ) : data.days[3].cloudCover.sg <= 50 ? (
+              <img src="icons/02d.png" className="clouds" />
+            ) : data.days[3].cloudCover.sg <= 75 ? (
+              <img src="icons/03d.png" className="clouds" />
+            ) : data.days[3].cloudCover.sg <= 100 ? (
+              <img src="icons/04d.png" className="clouds" />
+            ) : null}
           </button>
         </h2>
         <div
           id="collapseFour"
           class="accordion-collapse collapse "
           aria-labelledby="headingFour"
-          // data-bs-parent="#accordionExample"
+          data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
             <p className="city">{data.city}</p>
@@ -283,13 +330,23 @@ const Forecast = ({ data }) => {
             aria-controls="collapseFive"
           >
             {forecastDays[4]}
+            {"  "} {Math.round(data.days[4].airTemperature.sg)}°C{" "}
+            {data.days[4].cloudCover.sg <= 25 ? (
+              <img src="icons/01d.png" className="clouds" />
+            ) : data.days[4].cloudCover.sg <= 50 ? (
+              <img src="icons/02d.png" className="clouds" />
+            ) : data.days[4].cloudCover.sg <= 75 ? (
+              <img src="icons/03d.png" className="clouds" />
+            ) : data.days[4].cloudCover.sg <= 100 ? (
+              <img src="icons/04d.png" className="clouds" />
+            ) : null}
           </button>
         </h2>
         <div
           id="collapseFive"
           class="accordion-collapse collapse "
           aria-labelledby="headingFive"
-          // data-bs-parent="#accordionExample"
+          data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
             <p className="city">{data.city}</p>
@@ -343,13 +400,23 @@ const Forecast = ({ data }) => {
             aria-controls="collapseSix"
           >
             {forecastDays[5]}
+            {"  "} {Math.round(data.days[5].airTemperature.sg)}°C{" "}
+            {data.days[5].cloudCover.sg <= 25 ? (
+              <img src="icons/01d.png" className="clouds" />
+            ) : data.days[5].cloudCover.sg <= 50 ? (
+              <img src="icons/02d.png" className="clouds" />
+            ) : data.days[5].cloudCover.sg <= 75 ? (
+              <img src="icons/03d.png" className="clouds" />
+            ) : data.days[5].cloudCover.sg <= 100 ? (
+              <img src="icons/04d.png" className="clouds" />
+            ) : null}
           </button>
         </h2>
         <div
           id="collapseSix"
           class="accordion-collapse collapse "
           aria-labelledby="headingSix"
-          // data-bs-parent="#accordionExample"
+          data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
             <p className="city">{data.city}</p>
@@ -403,13 +470,23 @@ const Forecast = ({ data }) => {
             aria-controls="collapseSeven"
           >
             {forecastDays[6]}
+            {"  "} {Math.round(data.days[6].airTemperature.sg)}°C{" "}
+            {data.days[6].cloudCover.sg <= 25 ? (
+              <img src="icons/01d.png" className="clouds" />
+            ) : data.days[6].cloudCover.sg <= 50 ? (
+              <img src="icons/02d.png" className="clouds" />
+            ) : data.days[6].cloudCover.sg <= 75 ? (
+              <img src="icons/03d.png" className="clouds" />
+            ) : data.days[6].cloudCover.sg <= 100 ? (
+              <img src="icons/04d.png" className="clouds" />
+            ) : null}
           </button>
         </h2>
         <div
           id="collapseSeven"
           class="accordion-collapse collapse "
           aria-labelledby="headingSeven"
-          // data-bs-parent="#accordionExample"
+          data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
             <p className="city">{data.city}</p>
