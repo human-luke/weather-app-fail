@@ -1,8 +1,11 @@
+import EasterEgg from "../Easter-Egg/Easter-Egg.js";
+// import modal from "bootstrap";
 import "./Current-Weather.css";
 
 const CurrentWeather = ({ data }) => {
   return (
     <div className="weather">
+      {/* <EasterEgg /> */}
       <div className="top">
         <div>
           <p className="city">{data.city}</p>
@@ -18,7 +21,7 @@ const CurrentWeather = ({ data }) => {
             <img src="icons/03d.png" className="clouds" />
           ) : data.cloudCover.sg <= 100 ? (
             <img src="icons/04d.png" className="clouds" />
-          ) : null}
+          ) : null}{" "}
           {/* <img alt="weather" className="weather-icon" src="icons/01d.png" /> */}
         </div>
       </div>

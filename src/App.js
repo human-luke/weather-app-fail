@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Search from "./Components/Search";
 import Forecast from "./Components/Forecast/Forecast";
 import CurrentWeather from "./Components/Current-Weather/Current-Weather";
+import EasterEgg from "./Components/Easter-Egg/Easter-Egg";
 import CloudCover from "./Components/Cloud-Cover/Cloud-Cover";
 import { AsyncPaginate } from "react-select-async-paginate";
 import "./App.css";
@@ -63,6 +64,7 @@ function App() {
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}
+      <EasterEgg />
     </div>
   );
 }

@@ -1,0 +1,13 @@
+.myButton {
+  background-color: #33333300;
+  border: 1px #33333300;
+  border-radius: 6px;
+  color: #dd121200;
+  cursor: default !important;
+  font-size: 25px;
+  position: absolute;
+
+  right: 55px;
+  top: 80px;
+  width: auto;
+}

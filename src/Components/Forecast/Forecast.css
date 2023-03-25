@@ -2,7 +2,8 @@
   background-color: #fbfbfb00;
   color: #fffdfd;
   cursor: pointer;
-  padding: 0 100px 0 100px;
+  padding: 0 0 0 0;
+  height: 100%;
   width: 100%;
   border: transparent;
   text-align: left;
@@ -29,9 +30,10 @@
 
   background-color: transparent !important;
   display: center !important;
+  font-weight: 600 !important;
   font-size: 20px !important;
   margin: auto;
-  word-spacing: 100px !important;
+  /* word-spacing: 100px !important; */
 }
 
 .accordion-button:focus {

@@ -27,7 +27,7 @@ const Forecast = ({ data }) => {
     <div class="accordion" id="accordionExample">
       <label className="title">Forecast</label>
       {"     "}
-      <button type="button" class="btn btn-outline">
+      <button type="button" class="btn btn-outline-dark">
         Convert to Fahreinheit
       </button>
       {/* Forecast 1 */}
