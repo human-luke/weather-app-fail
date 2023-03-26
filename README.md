@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+This is my Weather App, it is named weather-app-fail because it was my very first attempt at making it and I actually gave up on this, but I stuck with it.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This WeatherApp shows the dynamic data for the current day and a 7 day forecast, each showing values for City Name, air temperature, Feels like temperature, wind speed, humidity, and pressure.
 
-## Available Scripts
+I added a dynamic cloud cover based icon system that updates according to the cloud cover percentage given in the Stormglass.io API.
 
-In the project directory, you can run:
+I added the convert Celsius to Fahrenheit buttons that only display the conversion once pressed in its own space, because the way I set up the code it originally took away the temperature values and would only display it once the toggle button was clicked, which messed up the aesthetic I had planned for this.
 
-### `npm start`
+**\*\***\*\*\*\***\*\*** EASTER EGG SPOILER **\*\***\*\*\*\***\*\***
+I will give you a hint, it is in plain sight but it is invisible and hidden behind something.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+EASTER EGG LOCATION - BELOW
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+.nottub a si tI .ti revo gnivom nehw raeppa ton dluow ti taht os llew sa rosruc esuom tluafed eht degnahc I .noci rehtaew eht dniheb renroc dnah thgir pot eht ni neddih si gge retsaE eht
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The current city search parameter is set to only show a min population over a 1,000,000. If you wish to change it, go to (Search.js -loadOptions) and remove this minPopulation=1000000& parameter for a broader city search.
