@@ -3,11 +3,9 @@ import Search from "./Components/Search";
 import Forecast from "./Components/Forecast/Forecast";
 import CurrentWeather from "./Components/Current-Weather/Current-Weather";
 import EasterEgg from "./Components/Easter-Egg/Easter-Egg";
-import CloudCover from "./Components/Cloud-Cover/Cloud-Cover";
 import { AsyncPaginate } from "react-select-async-paginate";
-import "./App.css";
-
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./Components/api";
+import "./App.css";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -27,8 +25,6 @@ function App() {
         },
       }
     );
-
-    // const arrDays = [[24], [48], [72], [96], [120], [144]];
 
     Promise.all([weatherFetch])
       .then(async (response) => {

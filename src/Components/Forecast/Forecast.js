@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import "react-accessible-accordion/dist/fancy-example.css";
 import { Accordion, Collapse } from "react-bootstrap";
 import { button } from "react-bootstrap";
 import transitions from "bootstrap";
-import cloudCover from "../Cloud-Cover/Cloud-Cover";
 import "./Forecast.css";
 
 const WEEK_DAYS = [
@@ -23,12 +22,51 @@ const Forecast = ({ data }) => {
   );
   console.log(forecastDays);
 
+  const [currentTempUnit, setCurrentTempUnit] = useState("Celcius");
+  const [buttonText, setButtonText] = useState("°C");
+  const [weatherData, setWeatherData] = useState(data);
+
+  const ToggleCToF = useCallback(() => {
+    let tempUnit;
+    if (currentTempUnit === "Celcius") {
+      setCurrentTempUnit("Fahrenheit");
+      tempUnit = [
+        Math.round(data.days[0].airTemperature.sg * 9) / 5 + 32,
+        Math.round(data.days[1].airTemperature.sg * 9) / 5 + 32,
+        Math.round(data.days[2].airTemperature.sg * 9) / 5 + 32,
+        Math.round(data.days[3].airTemperature.sg * 9) / 5 + 32,
+        Math.round(data.days[4].airTemperature.sg * 9) / 5 + 32,
+        Math.round(data.days[5].airTemperature.sg * 9) / 5 + 32,
+        Math.round(data.days[6].airTemperature.sg * 9) / 5 + 32,
+      ];
+      setWeatherData(tempUnit);
+      setButtonText("°F");
+    } else {
+      setCurrentTempUnit("Celcius");
+      tempUnit = [
+        Math.round(data.days[0].airTemperature.sg),
+        Math.round(data.days[1].airTemperature.sg),
+        Math.round(data.days[2].airTemperature.sg),
+        Math.round(data.days[3].airTemperature.sg),
+        Math.round(data.days[4].airTemperature.sg),
+        Math.round(data.days[5].airTemperature.sg),
+        Math.round(data.days[6].airTemperature.sg),
+      ];
+      setWeatherData(tempUnit);
+      setButtonText("°C");
+    }
+    console.log(tempUnit);
+  }, [weatherData]);
+
   return (
     <div class="accordion" id="accordionExample">
       <label className="title">Forecast</label>
-      {"     "}
-      <button type="button" class="btn btn-outline-dark">
-        Convert to Fahreinheit
+
+      <button
+        class="btn btn-outline-light btn-sm"
+        onClick={() => ToggleCToF({ weatherData })}
+      >
+        Toggle C to F
       </button>
       {/* Forecast 1 */}
       <div class="accordion-item">
@@ -63,8 +101,10 @@ const Forecast = ({ data }) => {
           <div class="accordion-body">
             <p className="city">{data.city}</p>
             <p className="temperature">
-              {/* {Math.round(data.days[0].airTemperature.sg)}°C */}
+              {" "}
+              {Math.round(data.days[0].airTemperature.sg)}°C
             </p>
+
             <p>
               {" "}
               <span className="parameter-label">Details</span>
@@ -98,12 +138,12 @@ const Forecast = ({ data }) => {
               </span>
             </p>
             <p>
-              {/* <img
-                alt="weather"
-                className="icon-small"
-                src={cloudCoverage(data.days[0].cloudCover.sg)}
-
-              /> */}
+              <span className="parameter-label"></span>
+              <span className="parameter-value">
+                {" "}
+                {weatherData[0]}
+                {buttonText}
+              </span>
             </p>
           </div>
         </div>
@@ -173,6 +213,14 @@ const Forecast = ({ data }) => {
               <span className="parameter-value">
                 {" "}
                 {Math.round(data.days[1].pressure.sg)} hPa
+              </span>
+            </p>
+            <p>
+              <span className="parameter-label"></span>
+              <span className="parameter-value">
+                {" "}
+                {weatherData[1]}
+                {buttonText}
               </span>
             </p>
           </div>
@@ -245,6 +293,14 @@ const Forecast = ({ data }) => {
                 {Math.round(data.days[2].pressure.sg)} hPa
               </span>
             </p>
+            <p>
+              <span className="parameter-label"></span>
+              <span className="parameter-value">
+                {" "}
+                {weatherData[2]}
+                {buttonText}
+              </span>
+            </p>
           </div>
         </div>
       </div>
@@ -313,6 +369,14 @@ const Forecast = ({ data }) => {
               <span className="parameter-value">
                 {" "}
                 {Math.round(data.days[3].pressure.sg)} hPa
+              </span>
+            </p>
+            <p>
+              <span className="parameter-label"></span>
+              <span className="parameter-value">
+                {" "}
+                {weatherData[3]}
+                {buttonText}
               </span>
             </p>
           </div>
@@ -385,6 +449,14 @@ const Forecast = ({ data }) => {
                 {Math.round(data.days[4].pressure.sg)} hPa
               </span>
             </p>
+            <p>
+              <span className="parameter-label"></span>
+              <span className="parameter-value">
+                {" "}
+                {weatherData[4]}
+                {buttonText}
+              </span>
+            </p>
           </div>
         </div>
       </div>
@@ -455,6 +527,14 @@ const Forecast = ({ data }) => {
                 {Math.round(data.days[5].pressure.sg)} hPa
               </span>
             </p>
+            <p>
+              <span className="parameter-label"></span>
+              <span className="parameter-value">
+                {" "}
+                {weatherData[5]}
+                {buttonText}
+              </span>
+            </p>
           </div>
         </div>
       </div>
@@ -523,6 +603,14 @@ const Forecast = ({ data }) => {
               <span className="parameter-value">
                 {" "}
                 {Math.round(data.days[6].pressure.sg)} hPa
+              </span>
+            </p>
+            <p>
+              <span className="parameter-label"></span>
+              <span className="parameter-value">
+                {" "}
+                {weatherData[6]}
+                {buttonText}
               </span>
             </p>
           </div>

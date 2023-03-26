@@ -2,7 +2,7 @@
   background-color: #33333300;
   border: 1px #33333300;
   border-radius: 6px;
-  color: #dd121200;
+  color: #dd121200 !important;
   cursor: default !important;
   font-size: 25px;
   position: absolute;

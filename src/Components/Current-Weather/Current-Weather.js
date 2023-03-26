@@ -1,15 +1,39 @@
+import React, { useState, useCallback } from "react";
 import EasterEgg from "../Easter-Egg/Easter-Egg.js";
-// import modal from "bootstrap";
 import "./Current-Weather.css";
 
 const CurrentWeather = ({ data }) => {
+  const [currentTempUnit, setCurrentTempUnit] = useState("Celsius");
+  const [buttonText, setButtonText] = useState("°C");
+  const [weatherData, setWeatherData] = useState(data);
+
+  const ToggleCToF = useCallback(() => {
+    let tempUnit;
+    if (currentTempUnit === "Celsius") {
+      setCurrentTempUnit("Fahrenheit");
+      tempUnit = [Math.round(data.airTemperature.sg * 9) / 5 + 32];
+      setWeatherData(tempUnit);
+      setButtonText("°F");
+    } else {
+      setCurrentTempUnit("Celsius");
+      tempUnit = [Math.round(data.airTemperature.sg)];
+      setWeatherData(tempUnit);
+      setButtonText("°C");
+    }
+    console.log(tempUnit);
+  }, [weatherData]);
+
   return (
     <div className="weather">
-      {/* <EasterEgg /> */}
       <div className="top">
+        <button
+          class="btn btn-outline-light btn-sm"
+          onClick={() => ToggleCToF()}
+        >
+          Toggle C to F
+        </button>
         <div>
           <p className="city">{data.city}</p>
-          {/* // potentially add dynamic if statement here// */}
           <p className="weather-description"></p>
         </div>
         <div className="clouds">
@@ -21,8 +45,7 @@ const CurrentWeather = ({ data }) => {
             <img src="icons/03d.png" className="clouds" />
           ) : data.cloudCover.sg <= 100 ? (
             <img src="icons/04d.png" className="clouds" />
-          ) : null}{" "}
-          {/* <img alt="weather" className="weather-icon" src="icons/01d.png" /> */}
+          ) : null}
         </div>
       </div>
       <div className="bottom">
@@ -57,6 +80,15 @@ const CurrentWeather = ({ data }) => {
             <span className="parameter-value">
               {" "}
               {Math.round(data.pressure.sg)} hPa
+            </span>
+          </div>
+          <div className="parameter-row">
+            <span className="parameter-label"></span>
+
+            <span className="parameter-value">
+              {" "}
+              {weatherData[0]}
+              {buttonText}
             </span>
           </div>
         </div>

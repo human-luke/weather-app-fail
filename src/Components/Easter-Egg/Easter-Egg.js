@@ -71,8 +71,6 @@ const EasterEgg = () => {
           </div>
         </div>
       </div>
-      {/* <div className="easter1">
-        <div class=""></div> */}
       <button
         type="button"
         class="myButton"
@@ -80,10 +78,9 @@ const EasterEgg = () => {
         href="#exampleModalToggle"
         // role="button"
       >
-        {" "}
         hi
+        {"   "}
       </button>
-      {/* </div> */}
     </div>
   );
 };
