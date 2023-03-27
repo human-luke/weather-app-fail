@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/weather-app-fail/static/css/main.5511da96.css",
+    "main.js": "/weather-app-fail/static/js/main.386f7141.js",
+    "static/media/sunset-over-mountains-hd.jpg": "/weather-app-fail/static/media/sunset-over-mountains-hd.09c5f59cf9b9895d77c9.jpg",
+    "index.html": "/weather-app-fail/index.html",
+    "main.5511da96.css.map": "/weather-app-fail/static/css/main.5511da96.css.map",
+    "main.386f7141.js.map": "/weather-app-fail/static/js/main.386f7141.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5511da96.css",
+    "static/js/main.386f7141.js"
+  ]
+}
